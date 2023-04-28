@@ -87,14 +87,13 @@ button {
 }
 
 /* //////////////////////// */
-header {
+
+.title {
+  font-size: 20px;
+  color: #7E7E82;
   padding: 16px;
   height: 80px;
   background-color: #fefefe;
-}
-.header__title {
-  font-size: 20px;
-  color: #7E7E82;
 }
 
 .brand-list {
@@ -156,7 +155,7 @@ header {
     margin-bottom: 10px;
   }  
 
-
+/* ///////////////// */
 
   .about__unwrap {
     position: relative;
@@ -164,27 +163,55 @@ header {
     display: inline-block;
     margin: auto;
   }
-  .arrow {
+  /* ////////////// */
+  
+  .about__read, 
+  .about__read-active {
+    margin-top: 16px;
+    margin-left: 48px;
+    position: relative;
+  }
+  .about__read::before,
+  .about__read::after,
+  .about__read-active::before,
+  .about__read-active::after  {
+    content: "";
     border: solid #7E7E82;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 2px;
-    transform: rotate(45deg);
+    transform: rotate(45deg); 
     -webkit-transform: rotate(45deg);
     position: absolute;
+    width: 6px;
+    height: 6px;
+    left: -20px;
+    top: 4px;
   }
-  .arrow:hover, .arrow:focus 
-  {border-color: aquamarine;}
-  .arrow:nth-child(1) {
-    left: 20px; 
-    top: 20px;
+  .about__read-active::before,
+  .about__read-active::after {
+    transform: rotate(225deg) !important; 
+    -webkit-transform: rotate(225deg) !important;
   }
-  .arrow:nth-child(2) {
-    left: 20px;
-    top: 25px;
-  } 
-  .about__read {
-    margin-top: 16px;
-    margin-left: 48px;
+  
+  
+  .about__read::after,
+  .about__read-active::after {
+    right: -166px;
+    top: 10px;
   }
+  .about__read:hover::before,
+  .about__read:hover::after,
+  .about__read:focus::before,
+  .about__read:focus::after,
+  .about__read-active:hover::before,
+  .about__read-active:hover::after,
+  .about__read-active:focus::before,
+  .about__read-active:focus::after { 
+    border-color: aquamarine;
+  
+  }
+
+    
+  /* //////////// */
 }
